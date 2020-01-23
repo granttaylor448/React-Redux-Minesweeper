@@ -1,25 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {useSelector, useDispatch } from 'react-redux';
+import Board from "./components/Board";
 
-function App() {
-  return (
+function App(props) {
+  const count = useSelector( state => state.counterReducer);
+  const Countdown = useSelector( state => state.clockReducer);
+  const flagsRemaining = useSelector( state => state.flaggedReducer);
+  const gameOver = useSelector( state => state.gameReducer);
+  const rootReducer = useSelector( state => state.rootReducer);
+  const winnerReducer = useSelector( state => state.winnerReducer);
+  const dispatch = useDispatch();
+
+  
+  
+    
+  return ( 
+    <React.Fragment>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> MINESWEEPER!</h1>
+      <p> You have 300 seconds to find 40 hidden bombs</p>
     </div>
+    <div className='entire-game'>
+      <Board  dispatch={dispatch} flagsRemaining={flagsRemaining} gameOver={gameOver} winnerReducer={winnerReducer} Countdown={Countdown}  rootReducer={rootReducer} count={count}  />
+    </div>
+    </React.Fragment>
   );
 }
 
