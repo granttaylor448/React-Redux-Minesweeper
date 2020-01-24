@@ -58,7 +58,7 @@ class Square extends Component {
     <Fragment>
     <button disabled={!gameOver || winnerReducer } className={ isOpen? "openSquare" : "closedSquare" } onClick={this.handleChange} 
       onContextMenu={this.handleChange} ref={this.props.squareElement}  >
-      {isOpen && value === 99 ?  <img src={Bomb} alt="site logo" height={10} width={10}   /> : "" }
+      {isOpen && value === 99 ?  <img src={Bomb} alt="site logo" height={30} width={30}   /> : "" }
       {isOpen && value && value !== 99 ?  `${value}` : "" }
       {isFlagged && <img src={Flag} alt="site logo" height={30} width={30}   /> }
     </button> 

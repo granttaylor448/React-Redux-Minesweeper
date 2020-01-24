@@ -16,15 +16,15 @@ function App(props) {
   
     
   return ( 
-    <React.Fragment>
+    // <React.Fragment>
     <div className="App">
-      <h1> MINESWEEPER!</h1>
-      <p> You have 300 seconds to find 40 hidden bombs</p>
-    </div>
-    <div className='entire-game'>
+      {/* <h1> MINESWEEPER!</h1>
+      <p> You have 500 seconds to find 40 hidden bombs</p> */}
+    
       <Board  dispatch={dispatch} flagsRemaining={flagsRemaining} gameOver={gameOver} winnerReducer={winnerReducer} Countdown={Countdown}  rootReducer={rootReducer} count={count}  />
+    
     </div>
-    </React.Fragment>
+    // </React.Fragment>
   );
 }
 

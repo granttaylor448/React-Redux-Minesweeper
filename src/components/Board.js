@@ -50,7 +50,7 @@ class Board extends Component {
   }
 
   componentDidUpdate() {
-    if (this.props.Countdown > 300 && this.timerID) {
+    if (this.props.Countdown > 500 && this.timerID) {
       clearInterval(this.timerID);
       this.props.dispatch({ type: 'CLEAR_TIMER' });
       this.props.dispatch({ type: 'GAME_OVER' });
@@ -121,54 +121,58 @@ class Board extends Component {
     });
     return (
       <Fragment> 
-        <Scoreboard Countdown={this.props.Countdown} dispatch={this.props.dispatch} resetGame={this.resetGame} flagsRemaining={this.props.flagsRemaining} gameOver={this.props.gameOver} rootReducer={this.props.rootReducer} winnerReducer={this.props.winnerReducer} />
-        <div className="border-row-top">
-          {column1}
-        </div>
-        <div className="border-row">
-          {column2}
-        </div>
-        <div className="border-row">
-          {column3}
-        </div>
-        <div className="border-row">
-          {column4}
-        </div>
-        <div className="border-row">
-        {column5}
-        </div>
-        <div className="border-row">
-          {column6}
-        </div>
-        <div className="border-row">
-          {column7}
-        </div>
-        <div className="border-row">
-          {column8}
-        </div>
-        <div className="border-row">
-          {column9}
-        </div>
-        <div className="border-row">
-          {column10}
-        </div>
-        <div className="border-row">
-          {column11}
-        </div>
-        <div className="border-row">
-          {column12}
-        </div>
-        <div className="border-row">
-          {column13}
-        </div>
-        <div className="border-row">
-          {column14}
-        </div>
-        <div className="border-row">
-          {column15}
-        </div>
-        <div className="border-row-bottom">
-        {column16}
+        <h1> MINESWEEPER!</h1>
+          <p> You have 500 seconds to find 40 hidden bombs</p>
+        <div className ="entire-game">
+          <Scoreboard Countdown={this.props.Countdown} dispatch={this.props.dispatch} resetGame={this.resetGame} flagsRemaining={this.props.flagsRemaining} gameOver={this.props.gameOver} rootReducer={this.props.rootReducer} winnerReducer={this.props.winnerReducer} />
+          <div className="border-row-top">
+            {column1}
+          </div>
+          <div className="border-row">
+            {column2}
+          </div>
+          <div className="border-row">
+            {column3}
+          </div>
+          <div className="border-row">
+            {column4}
+          </div>
+          <div className="border-row">
+          {column5}
+          </div>
+          <div className="border-row">
+            {column6}
+          </div>
+          <div className="border-row">
+            {column7}
+          </div>
+          <div className="border-row">
+            {column8}
+          </div>
+          <div className="border-row">
+            {column9}
+          </div>
+          <div className="border-row">
+            {column10}
+          </div>
+          <div className="border-row">
+            {column11}
+          </div>
+          <div className="border-row">
+            {column12}
+          </div>
+          <div className="border-row">
+            {column13}
+          </div>
+          <div className="border-row">
+            {column14}
+          </div>
+          <div className="border-row">
+            {column15}
+          </div>
+          <div className="border-row-bottom">
+          {column16}
+          </div>
         </div>      
       </Fragment> 
       )
