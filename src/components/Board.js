@@ -30,6 +30,7 @@ class Board extends Component {
     this.props.dispatch({ type: 'NEW_REDUX' });
     this.setState(state => ({
       gameBoard: generateBoardForPlay(),
+      newGame: true,
     }));
     window.location.reload(false)
   }

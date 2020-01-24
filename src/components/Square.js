@@ -3,10 +3,6 @@ import { connect} from 'react-redux';
 import Bomb from '../Photos/bombAvatar.png';
 import Flag from '../Photos/flagAvatar.png';
 
-
-
-
- 
 class Square extends Component {
   constructor(props) {
     super(props);
@@ -66,6 +62,7 @@ class Square extends Component {
   );
   }
 }
+
 const mapStateToProps = (state) => {
   return {
     flaggedReducer: state,
